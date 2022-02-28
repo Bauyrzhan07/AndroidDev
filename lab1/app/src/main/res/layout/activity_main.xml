@@ -15,27 +15,28 @@
             >
         </TextView>
     </RelativeLayout>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="300dp"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/operation"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:ellipsize="start"
             android:gravity="end"
             android:singleLine="true"
-            android:text="16*(0,5)"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="75dp"></TextView>
 
         <TextView
+            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:gravity="end"
-            android:text="8"
+            android:text=""
             android:textSize="50dp"></TextView>
     </LinearLayout>
     <LinearLayout
@@ -52,13 +53,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/btn7"
                     style="@style/Button"
                     android:text="7"
                     ></TextView>
                 <TextView
+                    android:id="@+id/btn8"
                     style="@style/Button"
                     android:text="8"></TextView>
                 <TextView
+                    android:id="@+id/btn9"
                     style="@style/Button"
                     android:text="9"></TextView>
             </LinearLayout>
@@ -67,13 +71,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/btn4"
                     style="@style/Button"
                     android:text="4"
                     ></TextView>
                 <TextView
+                    android:id="@+id/btn5"
                     style="@style/Button"
                     android:text="5"></TextView>
                 <TextView
+                    android:id="@+id/btn6"
                     style="@style/Button"
                     android:text="6"></TextView>
 
@@ -83,13 +90,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/btn1"
                     style="@style/Button"
                     android:text="1"
                     ></TextView>
                 <TextView
+                    android:id="@+id/btn2"
                     style="@style/Button"
                     android:text="2"></TextView>
                 <TextView
+                    android:id="@+id/btn3"
                     style="@style/Button"
                     android:text="3"></TextView>
             </LinearLayout>
@@ -98,13 +108,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <TextView
+                    android:id="@+id/btn0"
                     style="@style/Button"
                     android:text="0"
                     ></TextView>
                 <TextView
+                    android:id="@+id/btnDot"
                     style="@style/Button"
                     android:text=","></TextView>
                 <TextView
+                    android:id="@+id/btnEqual"
                     style="@style/Button"
                     android:text="="></TextView>
             </LinearLayout>
@@ -115,18 +128,23 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/btnDelete"
                 style="@style/OperationsButton"
-                android:text="<-"></TextView>
+                android:text="⌫"></TextView>
             <TextView
+                android:id="@+id/btnDiv"
                 style="@style/OperationsButton"
-                android:text="+"></TextView>
+                android:text="÷"></TextView>
             <TextView
+                android:id="@+id/btnMult"
                 style="@style/OperationsButton"
-                android:text="*"></TextView>
+                android:text="×"></TextView>
             <TextView
+                android:id="@+id/btnSub"
                 style="@style/OperationsButton"
                 android:text="-"></TextView>
             <TextView
+                android:id="@+id/btnPlus"
                 style="@style/OperationsButton"
                 android:text="+"></TextView>
         </LinearLayout>
@@ -136,9 +154,10 @@
             android:layout_weight="1"
             android:background="@color/blue">
             <TextView
+                android:id="@+id/btnMore"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="<"
+                android:text="⌫"
                 android:textSize="40dp"
                 android:gravity="center"
                 android:textAlignment="center">
