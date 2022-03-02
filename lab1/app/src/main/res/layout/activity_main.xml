@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/operation"
+            android:id="@+id/curVal"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:ellipsize="start"
@@ -75,10 +75,12 @@
                     style="@style/Button"
                     android:text="4"
                     ></TextView>
+
                 <TextView
                     android:id="@+id/btn5"
                     style="@style/Button"
                     android:text="5"></TextView>
+
                 <TextView
                     android:id="@+id/btn6"
                     style="@style/Button"
@@ -115,7 +117,7 @@
                 <TextView
                     android:id="@+id/btnDot"
                     style="@style/Button"
-                    android:text=","></TextView>
+                    android:text="."></TextView>
                 <TextView
                     android:id="@+id/btnEqual"
                     style="@style/Button"
