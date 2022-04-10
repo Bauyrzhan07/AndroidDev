@@ -2,37 +2,23 @@ package com.example.lab4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.lab4.databinding.ActivityMainBinding
-import com.example.lab4.databinding.TodoItemBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var bindingToDo: TodoItemBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        var categories = listOf(
-            Category(0, "first"),
-            Category(1, "second")
-        )
-        var ToDoList = mutableListOf(
-            ToDo(0, "a", "aaa", false, categories[0]),
-            ToDo(1, "b", "bbb", false, categories[1]),
-            ToDo(2, "c", "ccc", false, categories[1]),
-            ToDo(3, "d", "ddd", false, categories[0])
-        )
+        setContentView(R.layout.activity_main)
+    }
 
-        val adapter = ToDoAdapter(ToDoList)
-        binding.rvToDoList.adapter = adapter
-        binding.rvToDoList.layoutManager = LinearLayoutManager(this)
-
-        binding.btnApply.setOnClickListener {
-            val title = binding.etNewTask.text.toString()
-            ToDoList.add(ToDo(ToDoList.size, title, "", false, categories[0]))
-            adapter.notifyItemInserted(ToDoList.size - 1)
-        }
+    override fun onResume(){
+        super.onResume()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container_view, CategoriesFragment(), null)
+            .commit()
     }
 }

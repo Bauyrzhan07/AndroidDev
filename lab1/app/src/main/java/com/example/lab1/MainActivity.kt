@@ -5,25 +5,29 @@ import android.os.Bundle
 import com.example.lab1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
     var prevValue: Double? = null
     var curOperation: String? = null
+
+    companion object {
+        private const val CURRENT_VALUE = "curValue"
+        private const val PREVIOUS_VALUE = "prevValue"
+        private const val CUR_OPERATION = "curOperation"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initUI()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString("curValue", binding.curVal.text.toString())
+        outState.putString(CURRENT_VALUE, binding.curVal.text.toString())
         if(prevValue != null)
-            outState.putString("prevValue", prevValue.toString())
+            outState.putString(PREVIOUS_VALUE, prevValue.toString())
         if(curOperation != null)
-            outState.putString("curOperation", curOperation)
+            outState.putString(CUR_OPERATION, curOperation)
 
         super.onSaveInstanceState(outState)
     }
@@ -31,11 +35,11 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        binding.curVal.text = savedInstanceState.getString("curValue")
-        if(savedInstanceState.containsKey("prevValue"))
-            prevValue = savedInstanceState.getString("prevValue")?.toDouble()
-        if(savedInstanceState.containsKey("curOperation"))
-            curOperation = savedInstanceState.getString("curOperation")
+        binding.curVal.text = savedInstanceState.getString(CURRENT_VALUE)
+        if(savedInstanceState.containsKey(PREVIOUS_VALUE))
+            prevValue = savedInstanceState.getString(PREVIOUS_VALUE)?.toDouble()
+        if(savedInstanceState.containsKey(CUR_OPERATION))
+            curOperation = savedInstanceState.getString(CUR_OPERATION)
     }
 
     private fun initUI() {
