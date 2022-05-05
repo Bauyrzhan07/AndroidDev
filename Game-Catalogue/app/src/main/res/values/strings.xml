@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Game-Catalogue</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_title">Game title</string>
+    <string name="rating">rating</string>
+    <string name="games">Games</string>
+    <string name="release_date">release_date</string>
+    <string name="Welcome">Welcome to the free2game!</string>
+    <string name="to_games">See Free Games!</string>
+    <string name="to_categories">See all categories</string>
+    <string name="category_title">category_title</string>
+    <string name="short_desc">Short description</string>
+    <string name="home">Home</string>
+    <string name="games_list">Games List</string>
+    <string name="categories">Categories</string>
+    <string name="favourites">Favourites</string>
+    <string name="favourite_games">Favourite Games</string>
+    <string name="add_to_favourites">Add to Favourites</string>
+    <string name="delete_from_favs">Delete from Favourites</string>
+</resources>

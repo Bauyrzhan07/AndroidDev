@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.game_catalogue.view.Fragment.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_homeFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_gameListFragment"
+            app:destination="@id/gameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameListFragment"
+        android:name="com.example.game_catalogue.view.Fragment.GameListFragment"
+        android:label="Games" >
+        <argument
+            android:name="mode"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.game_catalogue.view.Fragment.CategoryListFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_category_list" >
+        <action
+            android:id="@+id/action_categoryListFragment_to_gameListFragment"
+            app:destination="@id/gameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.game_catalogue.view.Fragment.FavouritesFragment"
+        android:label="Favourites" />
+</navigation>
