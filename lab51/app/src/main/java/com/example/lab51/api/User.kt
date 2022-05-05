@@ -1,4 +1,4 @@
-package com.example.lab51.model
+package com.example.lab51.api
 
 import com.google.gson.annotations.SerializedName
 

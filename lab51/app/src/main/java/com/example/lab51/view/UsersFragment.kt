@@ -10,17 +10,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lab51.view.Adapters.UserAdapter
 import com.example.lab51.R
 import com.example.lab51.api.ApiClient
-import com.example.lab51.api.ApiService
+import com.example.lab51.contract.ContractInterface
 import com.example.lab51.databinding.FragmentUsersBinding
-import com.example.lab51.model.User
+import com.example.lab51.api.User
+import com.example.lab51.presenter.TodoListFragmentPresenter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UsersFragment : Fragment(R.layout.fragment_users) {
+class UsersFragment : Fragment(R.layout.fragment_users), ContractInterface.View {
     private lateinit var binding: FragmentUsersBinding
-    private var apiService = ApiClient.getApiService()
     private lateinit var users: List<User>
+    private var apiService = ApiClient.getApiService()
+    private var presenter: TodoListFragmentPresenter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,13 +34,22 @@ class UsersFragment : Fragment(R.layout.fragment_users) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = TodoListFragmentPresenter(this)
         users = getUsers()
+        initView()
+
+    }
+
+    override fun initView() {
         binding.rvUserList.apply {
             adapter = UserAdapter(users)
             layoutManager = LinearLayoutManager(context)
         }
     }
 
+    override fun updateViewData() {
+        binding.rvUserList.adapter = UserAdapter(users)
+    }
     private fun getUsers(): List<User> {
         var result: List<User> = emptyList()
 

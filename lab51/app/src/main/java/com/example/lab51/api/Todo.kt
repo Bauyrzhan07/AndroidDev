@@ -1,4 +1,4 @@
-package com.example.lab51.model
+package com.example.lab51.api
 
 data class Todo(
     val userId: Int,

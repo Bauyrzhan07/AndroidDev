@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab51.R
 import com.example.lab51.databinding.UserItemBinding
-import com.example.lab51.model.User
+import com.example.lab51.api.User
 import com.example.lab51.view.TodoListFragment
 
 class UserAdapter(

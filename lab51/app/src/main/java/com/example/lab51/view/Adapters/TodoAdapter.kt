@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab51.R
 import com.example.lab51.databinding.TodoItemBinding
-import com.example.lab51.model.Todo
+import com.example.lab51.api.Todo
 
 class TodoAdapter(
     private val todos: List<Todo>

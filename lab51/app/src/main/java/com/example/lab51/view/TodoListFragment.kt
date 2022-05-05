@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lab51.R
 import com.example.lab51.api.ApiClient
 import com.example.lab51.databinding.FragmentTodoListBinding
-import com.example.lab51.model.Todo
+import com.example.lab51.api.Todo
 import com.example.lab51.view.Adapters.TodoAdapter
 import retrofit2.Call
 import retrofit2.Callback
